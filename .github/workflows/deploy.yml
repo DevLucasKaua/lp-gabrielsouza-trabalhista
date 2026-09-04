@@ -1,0 +1,45 @@
+name: Deploy para Hostinger
+
+# Publica automaticamente na Hostinger sempre que a `main` recebe mudanças.
+# Também pode ser disparado manualmente pela aba Actions do GitHub.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Evita deploys simultâneos sobrescrevendo um ao outro.
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Build (static export)
+        run: npm run build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Barra final é obrigatória: envia o conteúdo de out/, não a pasta.
+          local-dir: ./out/
+          # Diretório do subdomínio na Hostinger (ex.: /public_html/ do subdomínio).
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          # Mantém o histórico de deploys para envios incrementais (mais rápido).
+          state-name: .ftp-deploy-sync-state.json

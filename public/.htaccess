@@ -1,0 +1,60 @@
+# =============================================================================
+# Gabriel e Souza Advogados — configuração Apache (Hostinger)
+# Copiado automaticamente para out/ no build (next export).
+# =============================================================================
+
+# Página de erro 404 do Next.js
+ErrorDocument 404 /404.html
+
+# --- Forçar HTTPS ------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# --- Compressão gzip ---------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml application/manifest+json
+  AddOutputFilterByType DEFLATE font/ttf font/otf font/woff font/woff2
+</IfModule>
+
+# --- Cache do navegador ------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Assets com hash no nome (imutáveis) — cache longo
+  ExpiresByType text/css                 "access plus 1 year"
+  ExpiresByType application/javascript   "access plus 1 year"
+  ExpiresByType font/woff2               "access plus 1 year"
+  ExpiresByType font/woff                "access plus 1 year"
+
+  # Mídia
+  ExpiresByType image/jpeg               "access plus 6 months"
+  ExpiresByType image/png                "access plus 6 months"
+  ExpiresByType image/webp               "access plus 6 months"
+  ExpiresByType image/svg+xml            "access plus 6 months"
+  ExpiresByType video/mp4                "access plus 6 months"
+
+  # HTML — sempre revalidar (conteúdo pode mudar a cada deploy)
+  ExpiresByType text/html                "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Cache imutável para os assets versionados do Next
+  <FilesMatch "\.(css|js|woff2?|jpg|jpeg|png|webp|svg|mp4)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # HTML nunca é cacheado de forma agressiva
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Cabeçalhos de segurança básicos
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
