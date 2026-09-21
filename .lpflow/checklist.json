@@ -1,0 +1,542 @@
+{
+  "specVersion": "1.0.0",
+  "geradoPor": "lp-checklist@1.0.0",
+  "origem": "retroativo",
+  "trimestre": "2026-Q3",
+  "projeto": {
+    "slug": "lp-gabrielsouza-trabalhista",
+    "nome": "lp-gabrielsouza-trabalhista",
+    "tipo": "lp",
+    "complexidade": null,
+    "principal": true,
+    "repo": {
+      "remote": "https://github.com/DevLucasKaua/lp-gabrielsouza-trabalhista.git",
+      "branch": "main",
+      "commit": "6795f0bfe77ebc8eb82fa88bcf80e60328c775ae",
+      "arvoreSuja": false
+    },
+    "url": {
+      "producao": null,
+      "preview": null
+    }
+  },
+  "cliente": {
+    "nome": null,
+    "escritorio": null,
+    "oab": null,
+    "email": null
+  },
+  "clickup": {
+    "taskId": null,
+    "taskUrl": null,
+    "lista": null
+  },
+  "producao": {
+    "time": "ninjaturtles",
+    "agentes": [],
+    "inicio": null,
+    "fim": "2026-09-04T17:06:49-03:00",
+    "horas": null,
+    "retrabalho": {
+      "reinvocacoes": 0,
+      "bugsImplementacao": 0,
+      "detalhe": []
+    }
+  },
+  "conceito": {
+    "tese": null,
+    "nome": null,
+    "novo": null,
+    "aprovado": null,
+    "direcao": null,
+    "template": null
+  },
+  "blocos": {
+    "reutilizados": [],
+    "criados": [],
+    "sugeridos": [
+      "AboutSection",
+      "AudienceCard",
+      "AudienceSection",
+      "CTAButton",
+      "DifferentiatorsSection",
+      "FinalCTASection",
+      "Footer",
+      "Hero",
+      "HowItWorksSection",
+      "Marquee",
+      "Navbar",
+      "SectionContainer",
+      "ServiceCard",
+      "ServicesGrid",
+      "StepItem",
+      "TeamGallery",
+      "WhatsAppFloat",
+      "WhyUsAccordion",
+      "AudienceIcons",
+      "ContactIcons",
+      "DifferentiatorIcons",
+      "ServiceIcons",
+      "UtilityIcons"
+    ]
+  },
+  "vieses": [],
+  "itens": [
+    {
+      "id": "build.compila",
+      "status": "pendente",
+      "evidencia": {
+        "comando": "n/d",
+        "medido": {
+          "motivo": "build não executado no passe retroativo (use --build)"
+        }
+      }
+    },
+    {
+      "id": "build.tipos",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:19.220Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "npx tsc --noEmit",
+        "medido": {
+          "exit": 0
+        }
+      }
+    },
+    {
+      "id": "build.lint",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.167Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "npm run lint",
+        "medido": {
+          "exit": 0,
+          "warnings": 0
+        }
+      }
+    },
+    {
+      "id": "build.alvo-deploy",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.167Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "leitura de next.config / .github/workflows / vercel.json",
+        "medido": {
+          "alvo": "export estático",
+          "out": true,
+          "workflows": 1,
+          "vercelJson": false,
+          "faltas": []
+        }
+      }
+    },
+    {
+      "id": "build.console-limpo",
+      "status": "pendente"
+    },
+    {
+      "id": "build.tokens-spec",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.272Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "fidelity-check.sh (checks 1-5)",
+        "medido": {
+          "fails": [
+            "FAIL: token '--bg-base' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--bg-surface' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--bg-surface-alt' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--border-hairline' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--gold-base' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--gold-dark' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--gold-light' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--overlay-scrim' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--text-primary' citado na spec e ausente de globals.css/motion-tokens.ts",
+            "FAIL: token '--text-secondary' citado na spec e ausente de globals.css/motion-tokens.ts"
+          ],
+          "totalFails": 10
+        }
+      }
+    },
+    {
+      "id": "sem.h1-unico",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.167Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "parse do HTML renderizado",
+        "medido": {
+          "rotas": 1,
+          "problemas": []
+        }
+      }
+    },
+    {
+      "id": "sem.landmarks",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.168Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "parse do HTML renderizado",
+        "medido": {
+          "rotas": 1,
+          "problemas": [
+            "out/index.html: 2 <section> sem id"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sem.alt",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.168Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "parse do HTML renderizado",
+        "medido": {
+          "imagens": 22,
+          "semAlt": 0,
+          "exemplos": []
+        }
+      }
+    },
+    {
+      "id": "sem.teclado",
+      "status": "pendente"
+    },
+    {
+      "id": "sem.alvos-44",
+      "status": "pendente"
+    },
+    {
+      "id": "sem.contraste-aa",
+      "status": "pendente"
+    },
+    {
+      "id": "img.formato",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.168Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "varredura de public/ por extensão (ícone/logo/OG isentos)",
+        "medido": {
+          "rasters": 22,
+          "fotos": 20,
+          "modernas": 18,
+          "legadas": [
+            "public/arao-gabriel.jpg (65 KB)",
+            "public/cleiton-souza.jpg (80 KB)"
+          ],
+          "isentas": [
+            "public/logo-mark.png",
+            "public/logo.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "img.peso",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.169Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "fs.statSync em public/",
+        "medido": {
+          "imagens": 22,
+          "totalKB": 2648,
+          "maior": "public/equipe/equipe-6-full.webp (283 KB)",
+          "faltas": [
+            "public/equipe/equipe-2-full.webp — 277 KB > 200 KB",
+            "public/equipe/equipe-6-full.webp — 283 KB > 200 KB",
+            "public/equipe/equipe-7-full.webp — 211 KB > 200 KB",
+            "public/equipe/equipe-9-full.webp — 242 KB > 200 KB",
+            "total 2.59 MB > 1.5 MB"
+          ]
+        }
+      }
+    },
+    {
+      "id": "img.responsiva",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.172Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "largura intrínseca + grep de sizes/srcset/next-image",
+        "medido": {
+          "largas": [
+            "public/equipe/equipe-1-full.webp (1920px)",
+            "public/equipe/equipe-1.webp (1080px)",
+            "public/equipe/equipe-2-full.webp (1920px)",
+            "public/equipe/equipe-2.webp (1080px)",
+            "public/equipe/equipe-3-full.webp (1920px)",
+            "public/equipe/equipe-3.webp (1080px)",
+            "public/equipe/equipe-4-full.webp (1920px)",
+            "public/equipe/equipe-4.webp (1080px)"
+          ],
+          "nextImage": true,
+          "sizesOuSrcset": true
+        }
+      }
+    },
+    {
+      "id": "img.dimensoes-cls",
+      "status": "pendente"
+    },
+    {
+      "id": "resp.sem-overflow",
+      "status": "pendente"
+    },
+    {
+      "id": "resp.sem-preso-invisivel",
+      "status": "pendente"
+    },
+    {
+      "id": "resp.mobile-first",
+      "status": "pendente"
+    },
+    {
+      "id": "resp.legibilidade-320",
+      "status": "pendente"
+    },
+    {
+      "id": "ux.dobra",
+      "status": "pendente"
+    },
+    {
+      "id": "ux.ponto-focal",
+      "status": "pendente"
+    },
+    {
+      "id": "ux.cta-primario",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.173Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "parse do HTML: rótulo de CTA genérico",
+        "medido": {
+          "genericos": []
+        }
+      }
+    },
+    {
+      "id": "ux.cta-funciona",
+      "status": "pendente"
+    },
+    {
+      "id": "ux.5s",
+      "status": "pendente"
+    },
+    {
+      "id": "ux.grayscale",
+      "status": "pendente"
+    },
+    {
+      "id": "ux.nielsen",
+      "status": "pendente"
+    },
+    {
+      "id": "ux.autonomia-secao",
+      "status": "pendente"
+    },
+    {
+      "id": "motion.microinteracoes",
+      "status": "pendente"
+    },
+    {
+      "id": "motion.reduced",
+      "status": "pendente"
+    },
+    {
+      "id": "vies.tres",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.173Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "validação de vieses[] no .lpflow/checklist.json",
+        "medido": {
+          "documentados": 0,
+          "incompletos": 0,
+          "nomes": []
+        }
+      }
+    },
+    {
+      "id": "blocos.registro",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.173Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "validação de blocos[] + existência dos paths",
+        "medido": {
+          "reutilizados": 0,
+          "criados": 0,
+          "faltas": [
+            "nenhum bloco declarado"
+          ]
+        }
+      }
+    },
+    {
+      "id": "blocos.sem-duplicacao",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.272Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "fidelity-check.sh (check 6)",
+        "medido": {
+          "duplicados": [
+            "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"font-body text-[13px] leading-relaxed text-text-secondary\"",
+            "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"font-body text-sm text-text-secondary transition-colors hover:text-gold-base\"",
+            "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"font-display text-sm font-semibold tracking-wide text-text-primary uppercase\"",
+            "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12\"",
+            "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"h-[18px] w-[18px] shrink-0 text-gold-base\"",
+            "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"mt-3 font-body text-sm leading-relaxed text-text-secondary md:text-base\"",
+            "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"mt-4 font-display text-[26px] leading-[1.1] font-extrabold tracking-tight uppercase md:text-[44px]\""
+          ],
+          "total": 7
+        }
+      }
+    },
+    {
+      "id": "entrega.seo",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.176Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "entrega técnica: favicon, sitemap, robots, OG",
+        "medido": {
+          "faltas": []
+        }
+      }
+    },
+    {
+      "id": "entrega.dados-oficiais",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.174Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "grep TODO/[A CONFIRMAR] × docs/PENDENCIAS.md",
+        "medido": {
+          "pendencias": 1,
+          "docPendencias": null,
+          "naoListadas": [
+            "src/app/layout.tsx: TODO: inserir ID de tracking do cliente — Meta Pixel */}"
+          ]
+        }
+      }
+    },
+    {
+      "id": "entrega.oab",
+      "status": "ok",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.174Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "léxico banido (Provimento OAB 205/2021) no texto visível",
+        "medido": {
+          "achados": []
+        }
+      }
+    },
+    {
+      "id": "entrega.acessos",
+      "status": "pendente"
+    },
+    {
+      "id": "entrega.deploy",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.174Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "checagem de deploy",
+        "medido": {
+          "url": null,
+          "canal": true,
+          "motivo": "URL de produção não registrada em projeto.url.producao"
+        }
+      }
+    },
+    {
+      "id": "entrega.tempo",
+      "status": "falha",
+      "metodo": "script",
+      "verificadoEm": "2026-09-21T14:46:21.174Z",
+      "verificadoPor": "lp-checklist",
+      "evidencia": {
+        "comando": "validação de producao.horas",
+        "medido": {
+          "registrado": false
+        }
+      }
+    }
+  ],
+  "resumo": {
+    "aprovado": false,
+    "obrigatorios": {
+      "total": 35,
+      "ok": 9,
+      "falha": 8,
+      "pendente": 18,
+      "na": 0,
+      "bloqueadoAceito": 0
+    },
+    "opcionais": {
+      "total": 4,
+      "ok": 0,
+      "falha": 2,
+      "pendente": 2,
+      "na": 0,
+      "bloqueadoAceito": 0
+    },
+    "kpis": {
+      "checklist-100": 0.26,
+      "imagens-otimizadas": 0.25,
+      "vieses-3": 0,
+      "responsividade-3bp": 0,
+      "ux-hierarquia-cta": 0.17
+    }
+  },
+  "verificacao": {
+    "executadoEm": "2026-09-21T14:46:21.273Z",
+    "host": "lucasnotbook",
+    "scriptVersao": "1.0.0",
+    "navegador": null,
+    "fidelityCheck": {
+      "executado": true,
+      "fails": 10,
+      "warns": 7,
+      "dups": [
+        "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"font-body text-[13px] leading-relaxed text-text-secondary\"",
+        "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"font-body text-sm text-text-secondary transition-colors hover:text-gold-base\"",
+        "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"font-display text-sm font-semibold tracking-wide text-text-primary uppercase\"",
+        "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12\"",
+        "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"h-[18px] w-[18px] shrink-0 text-gold-base\"",
+        "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"mt-3 font-body text-sm leading-relaxed text-text-secondary md:text-base\"",
+        "WARN: className longo repetido fora de ui/ (candidato a primitiva): className=\"mt-4 font-display text-[26px] leading-[1.1] font-extrabold tracking-tight uppercase md:text-[44px]\""
+      ]
+    },
+    "divergencias": []
+  },
+  "envio": null,
+  "notes": null
+}
