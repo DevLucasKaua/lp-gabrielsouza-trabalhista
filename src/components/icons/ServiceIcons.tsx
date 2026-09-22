@@ -73,17 +73,22 @@ export function BabyIcon({ className }: IconProps) {
   );
 }
 
-/** Aposentadorias Rurais */
-export function WheatIcon({ className }: IconProps) {
+/** Adicional de Insalubridade */
+export function HazardIcon({ className }: IconProps) {
   return (
     <svg className={className} {...base}>
-      <line x1="12" y1="21" x2="12" y2="4" />
-      <path d="M12 6c-2 0-3.5-1.5-3.5-3.5C10.5 2.5 12 4 12 6z" />
-      <path d="M12 6c2 0 3.5-1.5 3.5-3.5C13.5 2.5 12 4 12 6z" />
-      <path d="M12 11c-2 0-3.5-1.5-3.5-3.5C10.5 7.5 12 9 12 11z" />
-      <path d="M12 11c2 0 3.5-1.5 3.5-3.5C13.5 7.5 12 9 12 11z" />
-      <path d="M12 16c-2 0-3.5-1.5-3.5-3.5C10.5 12.5 12 14 12 16z" />
-      <path d="M12 16c2 0 3.5-1.5 3.5-3.5C13.5 12.5 12 14 12 16z" />
+      <path d="M12 3.5 21 19H3L12 3.5z" />
+      <line x1="12" y1="9.5" x2="12" y2="13.5" />
+      <circle cx="12" cy="16.2" r="0.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+/** Adicional de Periculosidade */
+export function BoltIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base}>
+      <path d="M13 2 5 13.5h6L10.5 22 19 10h-6L13 2z" />
     </svg>
   );
 }

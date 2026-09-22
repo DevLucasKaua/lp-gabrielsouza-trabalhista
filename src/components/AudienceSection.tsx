@@ -5,6 +5,7 @@ import {
   BandageIcon,
   PregnantIcon,
   ElderlyIcon,
+  SprayIcon,
 } from "./icons/AudienceIcons";
 
 const AUDIENCE = [
@@ -32,6 +33,12 @@ const AUDIENCE = [
       "Trabalhadores demitidos — com ou sem justa causa — que não receberam corretamente as verbas rescisórias, e quem trabalhou sem carteira assinada.",
     Icon: ElderlyIcon,
   },
+  {
+    title: "Quem trabalha em locais insalubres",
+    description:
+      "Auxiliares de serviços gerais, profissionais de limpeza, enfermeiros e técnicos de enfermagem em escolas, hospitais, batalhões e órgãos públicos que não recebem o adicional de insalubridade correto.",
+    Icon: SprayIcon,
+  },
 ] as const;
 
 export default function AudienceSection() {
@@ -52,7 +59,7 @@ export default function AudienceSection() {
         </h2>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-5">
         {AUDIENCE.map((profile) => (
           <AudienceCard
             key={profile.title}
