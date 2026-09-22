@@ -63,3 +63,18 @@ export function ElderlyIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+/** Quem trabalha em locais insalubres (limpeza / serviços gerais / enfermagem) */
+export function SprayIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base}>
+      <path d="M9 10h6v10a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V10z" />
+      <path d="M10.5 10V7h3v3" />
+      <path d="M13.5 7V4.5h-3" />
+      <path d="M13.5 4.5h3" />
+      <line x1="18.5" y1="3" x2="19.5" y2="2" />
+      <line x1="19" y1="5" x2="20.5" y2="5" />
+      <line x1="18.5" y1="7" x2="19.5" y2="8" />
+    </svg>
+  );
+}

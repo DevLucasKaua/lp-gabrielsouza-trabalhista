@@ -9,8 +9,9 @@ import {
   ShieldIcon,
   HandHeartIcon,
   BabyIcon,
-  WheatIcon,
   BuildingIcon,
+  HazardIcon,
+  BoltIcon,
 } from "./icons/ServiceIcons";
 
 const SERVICES = [
@@ -22,16 +23,18 @@ const SERVICES = [
     large: true,
   },
   {
-    title: "Horas Extras e Adicionais",
+    title: "Adicional de Insalubridade",
     description:
-      "Cobrança de horas extras não pagas e de adicionais noturno, de insalubridade e de periculosidade devidos ao trabalhador.",
-    Icon: PulseIcon,
+      "Cobrança do adicional de insalubridade não pago ou pago a menor a quem trabalha exposto a agentes nocivos: limpeza, serviços gerais, enfermagem, hospitais, escolas e órgãos públicos.",
+    Icon: HazardIcon,
+    large: true,
   },
   {
-    title: "Assédio Moral e Sexual",
+    title: "Reconhecimento de Vínculo",
     description:
-      "Responsabilização do empregador por humilhações, perseguições e condutas abusivas no ambiente de trabalho, com pedido de indenização.",
-    Icon: ShieldAlertIcon,
+      "Registro em carteira e direitos retroativos para quem trabalhou sem carteira assinada ou como PJ em relação de emprego disfarçada.",
+    Icon: BuildingIcon,
+    large: true,
     accent: "gold",
   },
   {
@@ -55,18 +58,25 @@ const SERVICES = [
     large: true,
   },
   {
-    title: "Trabalhador Rural",
+    title: "Adicional de Periculosidade",
     description:
-      "Defesa dos direitos de trabalhadores do campo, incluindo verbas não pagas e condições irregulares de trabalho.",
-    Icon: WheatIcon,
+      "Adicional de 30% sobre o salário para quem trabalha exposto a risco: eletricidade, inflamáveis, explosivos, segurança pessoal ou patrimonial e uso de motocicleta.",
+    Icon: BoltIcon,
     large: true,
     accent: "warm",
   },
   {
-    title: "Reconhecimento de Vínculo",
+    title: "Horas Extras e Adicionais",
     description:
-      "Registro em carteira e direitos retroativos para quem trabalhou sem carteira assinada ou como PJ em relação de emprego disfarçada.",
-    Icon: BuildingIcon,
+      "Cobrança de horas extras não pagas, intervalos suprimidos e adicionais noturno e de sobreaviso devidos ao trabalhador.",
+    Icon: PulseIcon,
+    large: true,
+  },
+  {
+    title: "Assédio Moral e Sexual",
+    description:
+      "Responsabilização do empregador por humilhações, perseguições e condutas abusivas no ambiente de trabalho, com pedido de indenização.",
+    Icon: ShieldAlertIcon,
     large: true,
   },
 ] as const;
