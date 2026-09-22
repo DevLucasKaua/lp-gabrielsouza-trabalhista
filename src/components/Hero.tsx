@@ -60,14 +60,15 @@ export default function Hero() {
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-7">
           <h1 className="font-display text-[34px] leading-[1.05] font-extrabold tracking-tight text-text-primary uppercase md:text-[60px] lg:text-[68px]">
-            Quem defende o trabalhador não se cala diante da&nbsp;injustiça
+            A empresa não pagou o que você tinha&nbsp;direito?
           </h1>
 
           <p className="mt-6 font-body text-sm leading-relaxed text-text-secondary md:text-base">
-            Demissão sem receber os direitos, horas extras não pagas, assédio
-            ou acidente de trabalho têm prazo para serem cobrados. Quanto
-            antes o seu caso for analisado, mais opções de defesa ficam
-            abertas. Fale com um advogado antes de decidir sozinho.
+            Descubra se existem valores ou direitos que podem estar sendo
+            ignorados pela empresa: verbas rescisórias, adicional de
+            insalubridade, horas extras, problemas com salário ou situações
+            de acidente e assédio. Entenda o que pode ser feito no seu caso
+            com a orientação de um advogado.
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
